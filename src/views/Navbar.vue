@@ -61,6 +61,8 @@ export default {
 body {
   margin: 0;
   font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
 }
 
 nav {
@@ -91,6 +93,7 @@ ul {
   justify-content: center;
   list-style: none;
   gap: 30px;
+  padding: 10px 0;
 }
 
 li {
@@ -104,19 +107,21 @@ a {
   font-weight: bold;
   font-size: 1rem;
   padding: 10px 15px;
-  transition: color 0.3s ease, transform 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+  border-radius: 20px;
 }
 
 a:hover {
   color: #ffdd57;
   transform: translateY(-3px);
+  background-color: rgba(255, 221, 87, 0.1);
 }
 
 button {
   background-color: #ffdd57;
   color: #1f2937;
   border: none;
-  padding: 5px 20px;
+  padding: 10px 20px;
   cursor: pointer;
   font-size: 1rem;
   font-weight: bold;
@@ -129,6 +134,7 @@ button {
 button:hover {
   background-color: #ffc107;
   transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 button {
@@ -150,9 +156,97 @@ button {
   display: flex;
   justify-content: center;
   gap: 10px;
+  padding: 20px;
+  background-color: #fff;
+  border-top: 1px solid #e0e0e0;
 }
 
 body {
   padding-top: 70px;
+}
+
+/* Дополнителни стилови за модерен изглед */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Анимации за појавување на елементи */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Ховер ефект за линковите во навигацијата */
+nav a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #ffdd57;
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* Подобрени копчиња */
+.btn-primary {
+  background: linear-gradient(90deg, #ffdd57, #ffc107);
+  color: #1f2937;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 </style>
