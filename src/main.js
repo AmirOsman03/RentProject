@@ -8,7 +8,10 @@ Vue.config.productionTip = false;
 
 // Isen 225031
 // Amir 224018
+//osman
+//osman
 new Vue({
     render: h => h(App),
     router, // Додај router во Vue инстанцата
+    //soam
 }).$mount('#app');
