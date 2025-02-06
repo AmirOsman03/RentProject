@@ -31,16 +31,16 @@
 <script>
 export default {
   name: "NavbarPage",
-  // data() {
-  //   return {
-  //     username: localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')).username : null,
-  //   };
-  // },
-  // watch: {
-  //   '$route': function() {
-  //     this.username = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')).username : null;
-  //   }
-  // },
+  data() {
+    return {
+      username: localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')).username : null,
+    };
+  },
+  watch: {
+    '$route': function() {
+      this.username = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')).username : null;
+    }
+  },
   methods: {
     handleLogout() {
       localStorage.removeItem('user');

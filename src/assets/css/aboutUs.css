@@ -1,0 +1,129 @@
+.about-us-container {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    animation: fadeIn 1s ease-out;
+}
+
+.mission-image img {
+    width: 100%;
+    height: auto;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease;
+}
+
+.mission-image img:hover {
+    transform: scale(1.05);
+}
+
+.mission-section {
+    margin-top: 30px;
+}
+
+.ceo-section {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.ceo-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+}
+
+.ceo-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.ceo-card img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #007bff;
+    transition: transform 0.3s ease;
+}
+
+.ceo-card img:hover {
+    transform: scale(1.1);
+}
+
+.ceo-card-body {
+    margin-top: 20px;
+}
+
+.ceo-card h5 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #343a40;
+    transition: color 0.3s ease;
+}
+
+.ceo-card:hover h5 {
+    color: #007bff;
+}
+
+.ceo-card p {
+    color: #555;
+    font-size: 1rem;
+}
+
+.mission-section h3 {
+    font-size: 2rem;
+    color: #343a40;
+    font-weight: bold;
+    animation: slideUp 1s ease-out;
+}
+
+.mission-section p {
+    font-size: 1.1rem;
+    color: #555;
+    max-width: 750px;
+    margin: 0 auto;
+    line-height: 1.6;
+    animation: fadeIn 1.5s ease-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes scale-up {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.scale-up {
+    animation: scale-up 0.8s ease-out;
+}
