@@ -1,13 +1,13 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="/home">Rent a Car</a>
+      <a class="navbar-brand mx-0" href="/home">Rent a Car</a>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav mx-auto">
           <li class="nav-item">
-            <router-link to="/home" class="nav-link">Home</router-link>
-            <router-link to="/cars" class="nav-link">Cars</router-link>
-            <router-link to="/about_us" class="nav-link">About Us</router-link>
+            <router-link to="/home" class="nav-link mx-5">Home</router-link>
+            <router-link to="/cars" class="nav-link mx-5">Cars</router-link>
+            <router-link to="/about_us" class="nav-link mx-5">About Us</router-link>
           </li>
         </ul>
 
@@ -249,4 +249,6 @@ nav a:hover::after {
   transform: translateY(-2px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+
+
 </style>

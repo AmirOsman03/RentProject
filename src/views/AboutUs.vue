@@ -1,7 +1,7 @@
 <template>
   <div class="about-us-container">
     <!-- Image for mission section -->
-    <div class="mission-image text-center mt-5">
+    <div class="mission-image text-center mt-4">
       <img
           src="@/assets/images/mission.png"
           alt="Mission Image"
@@ -17,7 +17,7 @@
 
     <!-- CEO Cards Section -->
     <div class="ceo-section row justify-content-center mt-5">
-      <div class="col-md-4">
+      <div class="col-md-5">
         <div class="ceo-card scale-up">
           <img
               src="@/assets/images/ceo1.jpg"
@@ -35,7 +35,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-5">
         <div class="ceo-card scale-up">
           <img
               src="@/assets/images/ceo2.jpg"
