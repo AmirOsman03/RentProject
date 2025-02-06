@@ -358,7 +358,7 @@
 
 <script>
 import {cars} from "@/cars";
-import '../assets/css/carsStyle.css'
+
 export default {
   name: "CarList",
   data() {
@@ -382,7 +382,7 @@ export default {
       endDate: "",
       editedCar: {},
       currentUser: {
-        role: 'admin' // Читање од localStorage
+        role: localStorage.getItem("userRole") || "user", // Читање од localStorage
       },
       myBookings: [],
     };
@@ -523,5 +523,45 @@ export default {
 </script>
 
 <style scoped>
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
+.card-body {
+  padding: 20px;
+}
+
+.car-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.car-brand {
+  color: #007bff;
+}
+
+.car-model {
+  color: #6c757d;
+}
+
+.card {
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.modal-backdrop {
+  display: none;
+}
+
+.modal {
+  display: block;
+}
+
+.modal .modal-dialog {
+  max-width: 500px;
+}
 </style>

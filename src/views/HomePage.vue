@@ -1,12 +1,13 @@
 <template>
   <div class="container-fluid">
-    <h1 class="text-center mt-4 mb-5 animate-fade-in text-black">
+    <h1 class="text-center mt-4 mb-5 animate-fade-in text-white">
       Enter Your Location
     </h1>
 
     <!-- Location Input Form -->
     <form @submit.prevent="handleSubmit" class="mt-4 animate-slide-up">
       <div class="mb-3">
+        <label for="location" class="form-label text-white">Location</label>
         <input
             type="text"
             class="form-control"
@@ -46,7 +47,7 @@
               <span class="car-model">{{ car.model }}</span>
             </h5>
             <p class="card-text">
-              <strong >Location:</strong> {{ car.location }} <br />
+              <strong>Location:</strong> {{ car.location }} <br />
               <strong>Type:</strong> {{ car.type }} <br />
               <strong>Year:</strong> {{ car.productionYear }} <br />
               <strong>Price:</strong> ${{ car.price }} <br />
@@ -125,15 +126,12 @@
 
 <script>
 import {cars} from "@/cars";
-import '../assets/css/styles.css'
 export default {
   name: "HomePage",
   data() {
     return {
       location: "", // Location input field
       cars: cars,
-
-
       showModal: false,
       selectedCar: null,
       startDate: "",
@@ -211,4 +209,151 @@ export default {
 };
 </script>
 
+<style scoped>
+body {
+  background: linear-gradient(
+      to right,
+      #00c6ff,
+      #0072ff
+  );
+  font-family: "Roboto", sans-serif;
+}
 
+/* Animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-in-out;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.5s ease-in-out;
+}
+
+/* Card hover effect */
+.hovered-card {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-body {
+  background-color: #fff; /* White card body */
+  border-radius: 15px;
+}
+
+/* Modal Styling */
+.modal-content {
+  border-radius: 15px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.modal-body {
+  margin-bottom: 20px;
+}
+
+.form-group input[type="date"] {
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.modal-footer button {
+  border-radius: 10px;
+  padding: 10px 20px;
+}
+
+.modal-footer .btn-primary {
+  background-color: #007bff;
+  border: none;
+}
+
+.modal-footer .btn-secondary {
+  background-color: #6c757d;
+  border: none;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.modal.show {
+  display: block;
+}
+
+/* Button Styling */
+.btn-primary,
+.btn-success,
+.btn-secondary {
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.btn-success:hover {
+  background-color: #28a745;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.rounded-pill {
+  border-radius: 50px;
+}
+
+/* Hover Effect on Cards */
+.card-img-top {
+  border-radius: 15px 15px 0 0;
+}
+
+/* Font and Title Styles */
+h1,
+.car-title {
+  font-family: "Arial", sans-serif;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+.car-brand,
+.car-model {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .card-body {
+    font-size: 0.9rem;
+  }
+}
+</style>
