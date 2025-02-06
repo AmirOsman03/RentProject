@@ -8,6 +8,8 @@ Vue.config.productionTip = false;
 
 // Isen 225031
 // Amir 224018
+// 224018
+// 2020203
 new Vue({
     render: h => h(App),
     router, // Додај router во Vue инстанцата
