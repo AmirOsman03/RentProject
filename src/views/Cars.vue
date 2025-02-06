@@ -357,7 +357,7 @@
 </template>
 
 <script>
-import {cars} from "../../cars";
+import {cars} from "@/cars";
 
 export default {
   name: "CarList",

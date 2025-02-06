@@ -125,15 +125,13 @@
 
 
 <script>
-import {cars} from "../../cars";
+import {cars} from "@/cars";
 export default {
   name: "HomePage",
   data() {
     return {
       location: "", // Location input field
       cars: cars,
-
-
       showModal: false,
       selectedCar: null,
       startDate: "",
