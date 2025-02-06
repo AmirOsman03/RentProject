@@ -5,6 +5,8 @@ import router from './router'; // Импортирај го router
 
 Vue.config.productionTip = false;
 
+
+//Isen Amir
 new Vue({
     render: h => h(App),
     router, // Додај router во Vue инстанцата
