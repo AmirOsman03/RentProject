@@ -144,3 +144,10 @@ input:focus {
         transform: translateX(-5px);
     }
 }
+
+.input-group input {
+    color: black;
+}
+.input-group input::placeholder {
+    color: gray;
+}

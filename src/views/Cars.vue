@@ -344,10 +344,9 @@
                 :disabled="
                 !startDate ||
                 !endDate ||
-                new Date(startDate) >= new Date(endDate)
-              "
+                new Date(startDate) >= new Date(endDate)"
             >
-              Confirm Booking
+              Confirm BookingÏ
             </button>
           </div>
         </div>
@@ -382,7 +381,7 @@ export default {
       endDate: "",
       editedCar: {},
       currentUser: {
-        role: localStorage.getItem("userRole") || "user", // Читање од localStorage
+        role: "admin", // Читање од localStorage
       },
       myBookings: [],
     };
@@ -521,3 +520,66 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 6rem;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.car-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.car-brand {
+  color: #007bff;
+}
+
+.car-model {
+  color: #6c757d;
+}
+
+.card {
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.modal-backdrop {
+  display: none;
+}
+
+.modal {
+  display: block;
+}
+
+.modal .modal-dialog {
+  margin-top: 10%;
+  margin-bottom: 10%;
+  max-width: 500px;
+}
+
+.mt-3{
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important;
+}
+
+.btn-warning {
+  color: white; /* Ensures text color is white */
+}
+
+.btn-warning:hover {
+  color: white; /* Keeps text color white on hover */
+  background-color: #ffcc00; /* Optional: you can customize the hover background color */
+}
+
+
+</style>

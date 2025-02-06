@@ -1,15 +1,40 @@
+/* Позадинска страница со подобрени ефекти */
 .background-page {
     background: url('@/assets/images/paris.jpg') no-repeat center center fixed;
     background-size: cover;
     min-height: 100vh;
     padding-top: 20px;
+    position: relative;
+    overflow: hidden;
 }
 
+/* Додадете overlay за подобар контраст на текстот */
+.background-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4); /* Темен overlay за подобар контраст */
+    z-index: 0;
+}
+
+/* За да ги ставиме елементите пред overlay-от */
+.container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Основни стилови за body */
 body {
     font-family: "Roboto", sans-serif;
+    color: #fff; /* Бела боја на текстот за подобар контраст */
+    margin: 0;
+    padding: 0;
 }
 
-/* Animations */
+/* Анимации */
 @keyframes fade-in {
     from {
         opacity: 0;
@@ -38,17 +63,168 @@ body {
     animation: slide-up 0.5s ease-in-out;
 }
 
-.card-body {
+/* Стилови за картичката */
+.card {
     background-color: #fff;
     border-radius: 15px;
-    padding: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .card-img-top {
     border-radius: 15px 15px 0 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
+.card-body {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 0 0 15px 15px;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Ховер ефект за картичката */
 .hovered-card {
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Дополнителни ефекти за копчиња */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(90deg, #007bff, #00c6ff);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 123, 255, 0.3);
+}
+
+/* Ефект на треперење за копчиња */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.btn-pulse:hover {
+    animation: pulse 1s infinite;
+}
+/* Анимација за формата */
+@keyframes slide-in {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-slide-up {
+    animation: slide-in 0.8s ease-out;
+}
+
+/* Стилови за формата */
+form {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 0 auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Стилови за input полето */
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+    outline: none;
+}
+
+/* Стилови за копчето */
+.btn-submit {
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(90deg, #007bff, #00c6ff);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-submit:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 123, 255, 0.3);
+}
+
+/* Ефект на треперење за копчето */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.btn-submit:hover {
+    animation: pulse 1s infinite;
 }

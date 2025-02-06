@@ -6,7 +6,7 @@
 
         <form @submit.prevent="handleLogin">
           <div class="input-group">
-            <input type="text" v-model="username" required placeholder="Username" />
+            <input type="text"  v-model="username" required placeholder="Username" />
           </div>
           <div class="input-group">
             <input type="password" v-model="password" required placeholder="Password" />
@@ -71,3 +71,4 @@ export default {
 /* Gradient Background */
 
 </style>
+
