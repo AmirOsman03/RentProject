@@ -249,6 +249,4 @@ nav a:hover::after {
   transform: translateY(-2px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
-
-
 </style>
