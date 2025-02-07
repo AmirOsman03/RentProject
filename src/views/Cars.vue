@@ -326,27 +326,24 @@
             </div>
             <!-- Display total price if it's available -->
             <div v-if="totalPrice > 0" class="mt-3">
-              <strong>Total Price:</strong> ${{ totalPrice }}
+              <p><strong>Total Price:</strong> ${{ totalPrice }}</p>
             </div>
           </div>
           <div class="modal-footer justify-content-center">
             <button
                 type="button"
-                class="btn btn-secondary rounded-pill"
+                class="btn btn-outline-secondary rounded-pill"
                 @click="closeModal"
             >
               Close
             </button>
             <button
+                :disabled="!startDate || !endDate"
                 type="button"
                 class="btn btn-success rounded-pill"
                 @click="confirmBooking"
-                :disabled="
-                !startDate ||
-                !endDate ||
-                new Date(startDate) >= new Date(endDate)"
             >
-              Confirm BookingÏ
+              Confirm Booking
             </button>
           </div>
         </div>
@@ -381,7 +378,7 @@ export default {
       endDate: "",
       editedCar: {},
       currentUser: {
-        role: "admin", // Читање од localStorage
+        role: localStorage.getItem('userRole') || 'user', // Default to 'user' if nothing is found in localStorage
       },
       myBookings: [],
     };
