@@ -56,16 +56,16 @@
             <button class="btn btn-primary w-100" @click="openModal(car)">
               Book Now
             </button>
-            <button
+            <button style="background: green"
                 v-if="currentUser.role === 'admin'"
-                class="btn btn-warning w-100 mt-2"
+                class="btn --bs-danger w-100 mt-2 "
                 @click="openEditModal(car)"
             >
               Edit
             </button>
-            <button
+            <button style="background: red"
                 v-if="currentUser.role === 'admin'"
-                class="btn btn-danger w-100 mt-2"
+                class="btn btn-danger w-100 mt-2 "
                 @click="deleteCar(car.id)"
             >
               Delete
