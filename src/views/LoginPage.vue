@@ -6,7 +6,7 @@
 
         <form @submit.prevent="handleLogin">
           <div class="input-group">
-            <input type="text"  v-model="username" required placeholder="Username" />
+            <input type="text" v-model="username" required placeholder="Username" />
           </div>
           <div class="input-group">
             <input type="password" v-model="password" required placeholder="Password" />
@@ -31,7 +31,8 @@
 </template>
 
 <script>
-import '../assets/css/login.css'
+import "../assets/css/login.css";
+
 export default {
   name: "LoginPage",
   data() {
@@ -40,8 +41,8 @@ export default {
       password: "",
       loginError: false,
       users: [
-        { username: "admin", password: "admin" },
-        { username: "user", password: "user" },
+        { username: "admin", password: "admin", role: "admin" },
+        { username: "user", password: "user", role: "user" },
       ],
     };
   },
@@ -53,9 +54,11 @@ export default {
       );
 
       if (user) {
+        // Зачувување на податоци во localStorage
         localStorage.setItem("user", JSON.stringify(user));
-        this.$emit("login", user.username);
-        this.$router.push("/home");
+        localStorage.setItem("userRole", user.role); // Додавање на role
+
+        this.$router.push("/home"); // Пренасочување на home по успешна најава
       } else {
         this.loginError = true;
         setTimeout(() => {
@@ -67,8 +70,4 @@ export default {
 };
 </script>
 
-<style scoped>
-/* Gradient Background */
-
-</style>
 
